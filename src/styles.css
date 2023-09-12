@@ -1,66 +1,104 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.5;
-  background-color: #fff0f5;
-}
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.breed-select {
-  margin-top: 30px;
-  max-width: 350px;
-}
-
-.cat-info {
+  font-family: 'Roboto', sans-serif;
   display: flex;
-  gap: 20px;
-  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #410358, #4700bc);
 }
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+.container {
+  width: 75%;
+}
+
+.list-wrapper {
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.list-item {
+  border: 1px solid #eee;
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px 0 #eee;
+  width: 30%;
+  margin: 15px;
+  cursor: pointer;
+}
+.list-item img {
+  width: 100%;
+  height: 400px;
   object-fit: cover;
 }
-.loader {
-  left: 50%;
-  top: 50%;
-  font-size: 36px;
-  font-family: serif;
-  font-weight: bold;
-  letter-spacing: 4.4px;
-  text-transform: capitalize;
-  position: absolute;
-  overflow: hidden;
-  transform: translate(-50%, -60%);
+
+.simple-pagination ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  margin-left: 10px;
 }
-.loader:before {
-  color: #aaa;
-  content: attr(data-loading-text);
+.simple-pagination li {
+  display: inline-block;
+  margin: 2px;
+}
+.simple-pagination li a,
+.simple-pagination li span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  text-align: center;
+
+  text-decoration: none;
+  color: #252522;
+  border-radius: 4px;
+  margin: 5px;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
+}
+.simple-pagination li a:hover {
+  background: #000;
+  color: #fff;
 }
 
-.loader:after {
-  top: 0;
-  left: 0;
-  width: 0;
-  opacity: 1;
-  color: #444;
-  overflow: hidden;
-  position: absolute;
-  content: attr(data-loading-text);
-  animation: loading 5s infinite;
+.simple-pagination .current {
+  color: #fff;
+  background-color: #000;
+  border-color: rgb(255, 255, 255);
+  border: 1px solid;
+  cursor: pointer;
 }
-
-@keyframes loading {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+.simple-pagination .prev.current,
+.simple-pagination .next.current {
+  background: #222;
+  border: none;
 }
